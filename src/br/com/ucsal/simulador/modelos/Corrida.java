@@ -15,12 +15,7 @@ public class Corrida {
 
         while((veiculo1.getDistancia() < distanciaMaxima) && (veiculo2.getDistancia() < distanciaMaxima)) {
             imprimirPista();
-            try {
-                Thread.sleep(300);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-
+            
             veiculo1.andar();
             veiculo2.andar();
         }
