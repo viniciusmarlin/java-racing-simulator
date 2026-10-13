@@ -1,6 +1,6 @@
 package br.com.ucsal.simulador.modelos;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class Veiculo {
     private int distancia, velocidade, velocidadeSorteada;
@@ -11,7 +11,6 @@ public class Veiculo {
         this.velocidadeSorteada = 0;
     }
 
-    //Getter
     public int getVelocidade() {
         return velocidade;
     }
@@ -24,9 +23,9 @@ public class Veiculo {
         return distancia;
     }
 
-    //Metódo
     public void andar() {
-        this.velocidadeSorteada = ThreadLocalRandom.current().nextInt(1, 4);
+        Random r = new Random();
+        this.velocidadeSorteada = r.nextInt(1,4);
 
         this.distancia += velocidadeSorteada;
     }
